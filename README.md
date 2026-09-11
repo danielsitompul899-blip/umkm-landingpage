@@ -1,25 +1,61 @@
-# UMKM Landing Page Demo
+# 🍽️ KitaPunyaRasa — Landing Page Kuliner
 
-Project demo landing page modern untuk UMKM makanan, toko lokal,
-jasa, atau personal brand.
+KitaPunyaRasa adalah project landing page untuk bisnis kuliner lokal yang dibuat sebagai bagian dari portofolio web development Daniel Sitompul.
 
-Website ini dibuat untuk portfolio dan demonstrasi desain.
-Produk, harga, testimoni, dan informasi bisnis pada demo ini
-bukan penawaran jual-beli nyata.
+Website ini dirancang untuk menampilkan informasi bisnis, menu makanan, keunggulan usaha, testimoni, dan kontak pemesanan secara sederhana, modern, dan responsif.
 
-## Fitur
-- Desain responsif untuk HP dan desktop
-- Hero section
-- Contoh katalog produk
-- Bagian keunggulan bisnis
-- Contoh testimoni
-- Call-to-action WhatsApp
-- Tampilan ringan dengan HTML dan CSS
+## 🔗 Live Demo
 
-## Teknologi
-- HTML
-- CSS
-- GitHub Pages
+Kunjungi website:
 
-## Demo
-Aktifkan GitHub Pages untuk melihat tampilan website.Demo landing page modern untuk UMKM
+https://danielsitompul899-blip.github.io/umkm-landingpage/
+
+## 📌 Tentang Project
+
+Project ini merupakan konsep desain website untuk bisnis kuliner bernama KitaPunyaRasa.
+
+Website ini dibuat untuk menunjukkan bagaimana bisnis lokal dapat memiliki halaman online yang:
+
+- Profesional.
+- Mudah digunakan.
+- Responsif di berbagai perangkat.
+- Memiliki informasi bisnis yang jelas.
+- Memudahkan pelanggan menghubungi pemilik usaha.
+
+KitaPunyaRasa merupakan brand fiktif yang dibuat khusus untuk kebutuhan project portofolio.
+
+## 🎯 Tujuan Project
+
+Tujuan pembuatan project ini adalah:
+
+- Membuat landing page untuk bisnis kuliner.
+- Menampilkan menu makanan secara menarik.
+- Menyediakan tombol pemesanan melalui WhatsApp.
+- Membuat tampilan website yang nyaman diakses melalui HP.
+- Menunjukkan kemampuan HTML, CSS, dan JavaScript.
+- Membuat project yang dapat dipublikasikan melalui GitHub Pages.
+
+## ✨ Fitur Website
+
+- Hero section dengan tombol ajakan.
+- Navigasi sticky.
+- Menu hamburger untuk perangkat mobile.
+- Section tentang bisnis.
+- Katalog menu makanan.
+- Informasi harga.
+- Section keunggulan bisnis.
+- Section testimoni.
+- Tombol WhatsApp.
+- Tombol WhatsApp melayang.
+- Footer dengan link ke portofolio.
+- Desain responsif untuk desktop, tablet, dan mobile.
+- Smooth scrolling.
+- Optimasi gambar menggunakan lazy loading.
+
+## 🖥️ Tampilan Website
+
+### Desktop
+
+Tambahkan screenshot desktop project di sini:
+
+```md
