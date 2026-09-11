@@ -9,14 +9,14 @@
 
   <style>
     :root {
-      --primary: #ea580c;
+      --primary: #f97316;
       --primary-dark: #7c2d12;
       --cream: #fff7ed;
       --white: #ffffff;
       --text: #292524;
       --muted: #57534e;
       --green: #16a34a;
-      --yellow: #fbbf24;
+      --dark: #1c1917;
     }
 
     * {
@@ -42,10 +42,10 @@
     }
 
     .demo-banner {
-      background: #1c1917;
+      padding: 10px 16px;
+      background: var(--dark);
       color: #fef3c7;
       text-align: center;
-      padding: 9px 15px;
       font-size: 0.9rem;
       font-weight: 700;
     }
@@ -53,13 +53,13 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 50;
       background: rgba(255, 255, 255, 0.97);
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
     }
 
     .navbar {
-      min-height: 70px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -68,9 +68,9 @@
 
     .logo {
       color: var(--primary-dark);
-      text-decoration: none;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 900;
+      text-decoration: none;
     }
 
     .logo span {
@@ -85,140 +85,150 @@
 
     nav a {
       color: var(--text);
-      text-decoration: none;
       font-weight: 700;
+      text-decoration: none;
     }
 
     .button {
       display: inline-block;
-      padding: 13px 19px;
-      border-radius: 12px;
       border: none;
-      text-decoration: none;
+      border-radius: 12px;
+      padding: 13px 19px;
       font-weight: 800;
+      text-decoration: none;
       cursor: pointer;
-      transition: 0.2s ease;
+      transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
     .button:hover {
+      opacity: 0.92;
       transform: translateY(-2px);
     }
 
     .button-primary {
-      color: white;
       background: var(--green);
+      color: white;
     }
 
     .button-secondary {
-      color: white;
-      background: var(--primary);
       margin-left: 8px;
+      background: var(--primary);
+      color: white;
     }
 
     .hero {
-      padding: 76px 0 60px;
-      background: linear-gradient(135deg, #ffedd5, #fef3c7);
+      min-height: 590px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      color: white;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(66, 32, 11, 0.88), rgba(66, 32, 11, 0.42)),
+        url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: 38px;
+    .hero-content {
+      width: min(1120px, 92%);
+      padding: 95px 0;
     }
 
     .badge {
       display: inline-block;
-      margin-bottom: 16px;
+      margin-bottom: 17px;
       padding: 7px 12px;
       border-radius: 999px;
       background: #fde68a;
-      color: #92400e;
+      color: #78350f;
       font-weight: 800;
     }
 
     h1 {
-      color: var(--primary-dark);
-      font-size: clamp(2.25rem, 5vw, 4rem);
-      line-height: 1.08;
-      margin-bottom: 16px;
+      max-width: 760px;
+      margin-bottom: 18px;
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      line-height: 1.05;
     }
 
     .hero p {
-      max-width: 570px;
-      font-size: 1.08rem;
-      margin-bottom: 24px;
-    }
-
-    .hero-image {
-      width: 100%;
-      min-height: 310px;
-      object-fit: cover;
-      border-radius: 24px;
-      background: #fdba74;
-      box-shadow: 0 16px 32px rgba(124, 45, 18, 0.22);
+      max-width: 630px;
+      margin-bottom: 27px;
+      font-size: 1.12rem;
+      color: #fff7ed;
     }
 
     section {
-      padding: 68px 0;
+      padding: 76px 0;
     }
 
     .title {
-      text-align: center;
       color: var(--primary-dark);
-      font-size: 2rem;
+      text-align: center;
+      font-size: 2.1rem;
       margin-bottom: 10px;
     }
 
     .subtitle {
-      max-width: 670px;
-      margin: 0 auto 34px;
-      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 38px;
       color: var(--muted);
+      text-align: center;
     }
 
     .product-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 24px;
     }
 
     .card {
       overflow: hidden;
       background: var(--white);
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 9px 24px rgba(0, 0, 0, 0.09);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
     }
 
     .card img {
       width: 100%;
-      height: 195px;
+      height: 230px;
+      display: block;
       object-fit: cover;
       background: #fed7aa;
     }
 
     .card-content {
-      padding: 20px;
+      padding: 21px;
     }
 
     .card h3 {
       color: var(--primary-dark);
-      margin-bottom: 8px;
+      margin-bottom: 9px;
+      font-size: 1.28rem;
     }
 
     .tag-demo {
       display: inline-block;
-      margin: 12px 0 16px;
-      padding: 5px 10px;
+      margin: 15px 0 18px;
+      padding: 6px 10px;
       border-radius: 999px;
       background: #ffedd5;
       color: #9a3412;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       font-weight: 800;
     }
 
     .why {
-      background: var(--primary-dark);
+      background:
+        linear-gradient(rgba(76, 31, 10, 0.93), rgba(76, 31, 10, 0.93)),
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=80")
+        center/cover;
       color: white;
     }
 
@@ -233,69 +243,100 @@
     .why-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 20px;
     }
 
     .why-card {
-      padding: 22px;
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 17px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(3px);
     }
 
     .why-card h3 {
       margin-bottom: 8px;
     }
 
+    .portfolio-note {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      padding: 17px 20px;
+      border-left: 5px solid var(--primary);
+      border-radius: 10px;
+      background: #ffedd5;
+      color: #7c2d12;
+      text-align: center;
+      font-weight: 700;
+    }
+
     .testimonial {
-      max-width: 750px;
-      margin: 16px auto;
-      padding: 22px;
+      max-width: 760px;
+      margin: 17px auto;
+      padding: 23px;
       border-left: 6px solid var(--primary);
       border-radius: 14px;
       background: var(--white);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    }
+
+    .testimonial strong {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--primary-dark);
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, #ffedd5, #fef3c7);
     }
 
     .cta-box {
-      max-width: 830px;
+      max-width: 840px;
       margin: auto;
-      padding: 36px;
-      text-align: center;
-      border-radius: 20px;
+      padding: 40px 28px;
+      border-radius: 22px;
       background: var(--white);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      box-shadow: 0 12px 27px rgba(0, 0, 0, 0.09);
     }
 
     .small-note {
-      margin-top: 16px;
+      margin-top: 18px;
       color: var(--muted);
       font-size: 0.9rem;
     }
 
     footer {
-      padding: 30px 0;
-      text-align: center;
-      background: #292524;
+      padding: 32px 0;
+      background: var(--dark);
       color: #f5f5f4;
+      text-align: center;
     }
 
     @media (max-width: 760px) {
-      .hero-grid,
-      .product-grid,
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
       nav a:not(.button) {
         display: none;
       }
 
       .hero {
-        padding-top: 48px;
+        min-height: 530px;
+      }
+
+      .hero-content {
+        padding: 72px 0;
+      }
+
+      .product-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
       }
 
       .button-secondary {
         margin: 10px 0 0;
+      }
+
+      section {
+        padding: 58px 0;
       }
     }
   </style>
@@ -303,7 +344,7 @@
 
 <body>
   <div class="demo-banner">
-    ⚠️ Ini adalah project demo untuk portfolio — bukan toko atau penawaran produk nyata.
+    ⚠️ PROJECT DEMO PORTFOLIO — Produk, testimoni, dan brand pada halaman ini hanya contoh desain; bukan penawaran jual-beli nyata.
   </div>
 
   <header>
@@ -311,79 +352,68 @@
       <a class="logo" href="#">Rasa<span>Kita</span></a>
 
       <nav>
-        <a href="#contoh-menu">Contoh Menu</a>
+        <a href="#contoh-menu">Contoh Katalog</a>
         <a href="#fitur">Fitur</a>
-        <a class="button button-primary" href="#kontak">
-          Minta Website Serupa
-        </a>
+        <a href="#kontak" class="button button-primary">Minta Website Serupa</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="badge">✨ Demo Landing Page UMKM</div>
-          <h1>Website Modern untuk Membantu UMKM Tampil Lebih Profesional</h1>
-          <p>
-            Contoh landing page untuk bisnis makanan, toko lokal, jasa,
-            atau personal brand. Desain dibuat responsif, ringan,
-            dan mudah dikembangkan sesuai kebutuhan bisnis.
-          </p>
+      <div class="hero-content">
+        <div class="badge">✨ Demo Landing Page UMKM</div>
+        <h1>Website yang Membuat Bisnis Lokal Terlihat Lebih Profesional</h1>
+        <p>
+          Contoh desain landing page untuk UMKM makanan, toko, jasa, dan personal brand.
+          Dibuat responsif agar nyaman dibuka dari HP maupun desktop.
+        </p>
 
-          <a class="button button-primary" href="#kontak">
-            Minta Website Seperti Ini
-          </a>
-
-          <a class="button button-secondary" href="#contoh-menu">
-            Lihat Contoh Desain
-          </a>
-        </div>
-
-        <img class="hero-image"
-             src="https://via.placeholder.com/800x600/ea580c/ffffff?text=DEMO+LANDING+PAGE+UMKM"
-             alt="Contoh tampilan landing page UMKM">
+        <a class="button button-primary" href="#kontak">Minta Website Seperti Ini</a>
+        <a class="button button-secondary" href="#contoh-menu">Lihat Contoh Desain</a>
       </div>
     </section>
 
     <section id="contoh-menu">
       <div class="container">
-        <h2 class="title">Contoh Kartu Katalog</h2>
+        <h2 class="title">Contoh Tampilan Katalog</h2>
         <p class="subtitle">
-          Bagian ini memperlihatkan bagaimana produk atau layanan UMKM dapat ditampilkan.
-          Semua data berikut hanya contoh desain.
+          Foto dan kartu di bawah adalah contoh cara menampilkan produk/layanan pada website UMKM.
+          Semua informasi ini hanya untuk kebutuhan demo portfolio.
         </p>
 
         <div class="product-grid">
           <article class="card">
-            <img src="https://via.placeholder.com/600x400/f97316/ffffff?text=CONTOH+PRODUK+1"
-                 alt="Contoh produk satu">
+            <img
+              src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=80"
+              alt="Contoh produk makanan pertama">
             <div class="card-content">
               <h3>Produk Contoh Satu</h3>
-              <p>Contoh tampilan nama produk, deskripsi singkat, foto, dan tombol aksi.</p>
+              <p>Contoh kartu katalog dengan foto, judul, deskripsi, dan tombol ajakan.</p>
               <span class="tag-demo">Demo desain — bukan dijual</span><br>
               <a class="button button-primary" href="#kontak">Minta Desain Serupa</a>
             </div>
           </article>
 
           <article class="card">
-            <img src="https://via.placeholder.com/600x400/f59e0b/ffffff?text=CONTOH+PRODUK+2"
-                 alt="Contoh produk dua">
+            <img
+              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80"
+              alt="Contoh produk makanan kedua">
             <div class="card-content">
               <h3>Produk Contoh Dua</h3>
-              <p>Bagian ini dapat diubah menjadi menu makanan, jasa, atau katalog toko.</p>
+              <p>Bagian ini dapat diubah menjadi menu makanan, jasa, toko, atau produk lainnya.</p>
               <span class="tag-demo">Demo desain — bukan dijual</span><br>
               <a class="button button-primary" href="#kontak">Minta Desain Serupa</a>
             </div>
           </article>
 
           <article class="card">
-            <img src="https://via.placeholder.com/600x400/ea580c/ffffff?text=CONTOH+PRODUK+3"
-                 alt="Contoh produk tiga">
+            <img
+              src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=900&q=80"
+              alt="Contoh produk makanan ketiga">
             <div class="card-content">
               <h3>Produk Contoh Tiga</h3>
-              <p>Desain dapat disesuaikan dengan brand, warna, foto, dan informasi usaha klien.</p>
+              <p>Warna, gambar, isi, dan tombol dapat disesuaikan dengan identitas brand klien.</p>
               <span class="tag-demo">Demo desain — bukan dijual</span><br>
               <a class="button button-primary" href="#kontak">Minta Desain Serupa</a>
             </div>
@@ -394,25 +424,25 @@
 
     <section class="why" id="fitur">
       <div class="container">
-        <h2 class="title">Fitur yang Ditampilkan</h2>
+        <h2 class="title">Fitur pada Landing Page</h2>
         <p class="subtitle">
-          Fitur dasar yang cocok untuk landing page bisnis sederhana.
+          Struktur ini bisa dipakai sebagai dasar website bisnis sederhana yang modern dan jelas.
         </p>
 
         <div class="why-grid">
           <div class="why-card">
-            <h3>📱 Responsif</h3>
-            <p>Tampilan menyesuaikan layar HP, tablet, dan desktop.</p>
+            <h3>📱 Ramah Mobile</h3>
+            <p>Layout menyesuaikan layar HP, tablet, sampai desktop agar nyaman dibaca semua orang.</p>
           </div>
 
           <div class="why-card">
-            <h3>⚡ Ringan</h3>
-            <p>Menggunakan HTML dan CSS sederhana agar cepat dibuka.</p>
+            <h3>⚡ Cepat dan Ringan</h3>
+            <p>Dibuat dengan HTML dan CSS sederhana sehingga tidak membutuhkan aplikasi atau server rumit.</p>
           </div>
 
           <div class="why-card">
-            <h3>💬 Call to Action</h3>
-            <p>Tombol dapat diarahkan ke WhatsApp, Instagram, marketplace, atau formulir.</p>
+            <h3>💬 Call-to-Action</h3>
+            <p>Tombol dapat diarahkan ke WhatsApp, Instagram, marketplace, Google Maps, atau formulir.</p>
           </div>
         </div>
       </div>
@@ -422,39 +452,43 @@
       <div class="container">
         <h2 class="title">Contoh Area Testimoni</h2>
         <p class="subtitle">
-          Pada website asli, bagian ini diisi dengan ulasan pelanggan yang nyata.
+          Pada website untuk bisnis sungguhan, area ini wajib diisi ulasan pelanggan yang benar-benar asli.
         </p>
 
-        <div class="testimonial">
-          “Contoh tata letak testimoni pelanggan. Jangan gunakan ulasan ini untuk bisnis nyata.”
-          <br><strong>— Demo Testimoni</strong>
+        <div class="portfolio-note">
+          Catatan: Testimoni berikut hanya contoh tata letak untuk project demo, bukan ulasan pelanggan nyata.
         </div>
 
         <div class="testimonial">
-          “Testimoni asli dapat meningkatkan kepercayaan calon pelanggan pada sebuah UMKM.”
-          <br><strong>— Demo Testimoni</strong>
+          “Contoh tampilan testimoni yang dapat dipakai untuk memperkuat kepercayaan pengunjung pada website bisnis.”
+          <strong>— Demo Testimoni 1</strong>
+        </div>
+
+        <div class="testimonial">
+          “Bagian testimoni bisa dipadukan dengan nama, foto pelanggan, rating, atau tangkapan layar ulasan asli.”
+          <strong>— Demo Testimoni 2</strong>
         </div>
       </div>
     </section>
 
-    <section id="kontak">
+    <section class="cta-section" id="kontak">
       <div class="container">
         <div class="cta-box">
           <h2 class="title">Butuh Website Seperti Ini?</h2>
           <p>
-            Saya dapat membantu membuat landing page portfolio,
-            katalog produk, atau website UMKM sederhana.
+            Saya dapat membantu membuat landing page portfolio, katalog produk,
+            menu digital, atau website UMKM sederhana.
           </p>
           <br>
 
           <a class="button button-primary"
              href="https://wa.me/62881026739596?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20landing%20page."
              target="_blank">
-             Konsultasi via WhatsApp
+            Konsultasi via WhatsApp
           </a>
 
           <p class="small-note">
-            Ganti nomor WhatsApp pada kode ini sebelum website dipublikasikan.
+            Sebelum dipublikasikan, ganti <strong>628XXXXXXXXXX</strong> dengan nomor WhatsApp kamu.
           </p>
         </div>
       </div>
