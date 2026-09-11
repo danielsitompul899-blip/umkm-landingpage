@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RasaKita — Demo Landing Page UMKM</title>
+  <meta name="description" content="Demo landing page modern untuk UMKM. Dibuat sebagai project portfolio.">
+
+  <style>
+    :root {
+      --primary: #ea580c;
+      --primary-dark: #7c2d12;
+      --cream: #fff7ed;
+      --white: #ffffff;
+      --text: #292524;
+      --muted: #57534e;
+      --green: #16a34a;
+      --yellow: #fbbf24;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    .demo-banner {
+      background: #1c1917;
+      color: #fef3c7;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-weight: 900;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 19px;
+      border-radius: 12px;
+      border: none;
+      text-decoration: none;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: white;
+      background: var(--green);
+    }
+
+    .button-secondary {
+      color: white;
+      background: var(--primary);
+      margin-left: 8px;
+    }
+
+    .hero {
+      padding: 76px 0 60px;
+      background: linear-gradient(135deg, #ffedd5, #fef3c7);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 38px;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #fde68a;
+      color: #92400e;
+      font-weight: 800;
+    }
+
+    h1 {
+      color: var(--primary-dark);
+      font-size: clamp(2.25rem, 5vw, 4rem);
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      max-width: 570px;
+      font-size: 1.08rem;
+      margin-bottom: 24px;
+    }
+
+    .hero-image {
+      width: 100%;
+      min-height: 310px;
+      object-fit: cover;
+      border-radius: 24px;
+      background: #fdba74;
+      box-shadow: 0 16px 32px rgba(124, 45, 18, 0.22);
+    }
+
+    section {
+      padding: 68px 0;
+    }
+
+    .title {
+      text-align: center;
+      color: var(--primary-dark);
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      max-width: 670px;
+      margin: 0 auto 34px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      overflow: hidden;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .card img {
+      width: 100%;
+      height: 195px;
+      object-fit: cover;
+      background: #fed7aa;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .tag-demo {
+      display: inline-block;
+      margin: 12px 0 16px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #ffedd5;
+      color: #9a3412;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .why {
+      background: var(--primary-dark);
+      color: white;
+    }
+
+    .why .title {
+      color: white;
+    }
+
+    .why .subtitle {
+      color: #fed7aa;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .why-card {
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 16px;
+    }
+
+    .why-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .testimonial {
+      max-width: 750px;
+      margin: 16px auto;
+      padding: 22px;
+      border-left: 6px solid var(--primary);
+      border-radius: 14px;
+      background: var(--white);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    .cta-box {
+      max-width: 830px;
+      margin: auto;
+      padding: 36px;
+      text-align: center;
+      border-radius: 20px;
+      background: var(--white);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .small-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      background: #292524;
+      color: #f5f5f4;
+    }
+
+    @media (max-width: 760px) {
+      .hero-grid,
+      .product-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav a:not(.button) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .button-secondary {
+        margin: 10px 0 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo-banner">
+    ⚠️ Ini adalah project demo untuk portfolio — bukan toko atau penawaran produk nyata.
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a class="logo" href="#">Rasa<span>Kita</span></a>
+
+      <nav>
+        <a href="#contoh-menu">Contoh Menu</a>
+        <a href="#fitur">Fitur</a>
+        <a class="button button-primary" href="#kontak">
+          Minta Website Serupa
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">✨ Demo Landing Page UMKM</div>
+          <h1>Website Modern untuk Membantu UMKM Tampil Lebih Profesional</h1>
+          <p>
+            Contoh landing page untuk bisnis makanan, toko lokal, jasa,
+            atau personal brand. Desain dibuat responsif, ringan,
+            dan mudah dikembangkan sesuai kebutuhan bisnis.
+          </p>
+
+          <a class="button button-primary" href="#kontak">
+            Minta Website Seperti Ini
+          </a>
+
+          <a class="button button-secondary" href="#contoh-menu">
+            Lihat Contoh Desain
+          </a>
+        </div>
+
+        <img class="hero-image"
+             src="https://via.placeholder.com/800x600/ea580c/ffffff?text=DEMO+LANDING+PAGE+UMKM"
+             alt="Contoh tampilan landing page UMKM">
+      </div>
+    </section>
+
+    <section id="contoh-menu">
+      <div class="container">
+        <h2 class="title">Contoh Kartu Katalog</h2>
+        <p class="subtitle">
+          Bagian ini memperlihatkan bagaimana produk atau layanan UMKM dapat ditampilkan.
+          Semua data berikut hanya contoh desain.
+        </p>
+
+        <div class="product-grid">
+          <article class="card">
+            <img src="https://via.placeholder.com/600x400/f97316/ffffff?text=CONTOH+PRODUK+1"
+                 alt="Contoh produk satu">
+            <div class="card-content">
+              <h3>Produk Contoh Satu</h3>
+              <p>Contoh tampilan nama produk, deskripsi singkat, foto, dan tombol aksi.</p>
+              <span class="tag-demo">Demo desain — bukan dijual</span><br>
+              <a class="button button-primary" href="#kontak">Minta Desain Serupa</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/600x400/f59e0b/ffffff?text=CONTOH+PRODUK+2"
+                 alt="Contoh produk dua">
+            <div class="card-content">
+              <h3>Produk Contoh Dua</h3>
+              <p>Bagian ini dapat diubah menjadi menu makanan, jasa, atau katalog toko.</p>
+              <span class="tag-demo">Demo desain — bukan dijual</span><br>
+              <a class="button button-primary" href="#kontak">Minta Desain Serupa</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/600x400/ea580c/ffffff?text=CONTOH+PRODUK+3"
+                 alt="Contoh produk tiga">
+            <div class="card-content">
+              <h3>Produk Contoh Tiga</h3>
+              <p>Desain dapat disesuaikan dengan brand, warna, foto, dan informasi usaha klien.</p>
+              <span class="tag-demo">Demo desain — bukan dijual</span><br>
+              <a class="button button-primary" href="#kontak">Minta Desain Serupa</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="fitur">
+      <div class="container">
+        <h2 class="title">Fitur yang Ditampilkan</h2>
+        <p class="subtitle">
+          Fitur dasar yang cocok untuk landing page bisnis sederhana.
+        </p>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <h3>📱 Responsif</h3>
+            <p>Tampilan menyesuaikan layar HP, tablet, dan desktop.</p>
+          </div>
+
+          <div class="why-card">
+            <h3>⚡ Ringan</h3>
+            <p>Menggunakan HTML dan CSS sederhana agar cepat dibuka.</p>
+          </div>
+
+          <div class="why-card">
+            <h3>💬 Call to Action</h3>
+            <p>Tombol dapat diarahkan ke WhatsApp, Instagram, marketplace, atau formulir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="title">Contoh Area Testimoni</h2>
+        <p class="subtitle">
+          Pada website asli, bagian ini diisi dengan ulasan pelanggan yang nyata.
+        </p>
+
+        <div class="testimonial">
+          “Contoh tata letak testimoni pelanggan. Jangan gunakan ulasan ini untuk bisnis nyata.”
+          <br><strong>— Demo Testimoni</strong>
+        </div>
+
+        <div class="testimonial">
+          “Testimoni asli dapat meningkatkan kepercayaan calon pelanggan pada sebuah UMKM.”
+          <br><strong>— Demo Testimoni</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="title">Butuh Website Seperti Ini?</h2>
+          <p>
+            Saya dapat membantu membuat landing page portfolio,
+            katalog produk, atau website UMKM sederhana.
+          </p>
+          <br>
+
+          <a class="button button-primary"
+             href="https://wa.me/62881026739596?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20landing%20page."
+             target="_blank">
+             Konsultasi via WhatsApp
+          </a>
+
+          <p class="small-note">
+            Ganti nomor WhatsApp pada kode ini sebelum website dipublikasikan.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>UMKM Landing Page Demo</strong> — Project portfolio oleh Daniel Sitompul.</p>
+      <p>© 2026. Dibuat dengan HTML, CSS, dan GitHub Pages.</p>
+    </div>
+  </footer>
+</body>
+</html>
