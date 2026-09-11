@@ -52,10 +52,4 @@ Tujuan pembuatan project ini adalah:
 - Smooth scrolling.
 - Optimasi gambar menggunakan lazy loading.
 
-## 🖥️ Tampilan Website
 
-### Desktop
-
-Tambahkan screenshot desktop project di sini:
-
-```md
