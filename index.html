@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>RasaKita — Demo Landing Page UMKM</title>
-  <meta name="description" content="Demo landing page modern untuk UMKM. Dibuat sebagai project portfolio.">
+  <title>Daniel Web Studio — Jasa Pembuatan Website UMKM</title>
+  <meta name="description" content="Jasa pembuatan website profesional, landing page, katalog produk, dan website UMKM dengan desain modern dan responsif.">
 
   <style>
     :root {
@@ -17,6 +17,7 @@
       --muted: #57534e;
       --green: #16a34a;
       --dark: #1c1917;
+      --border: #fed7aa;
     }
 
     * {
@@ -39,15 +40,6 @@
     .container {
       width: min(1120px, 92%);
       margin: auto;
-    }
-
-    .demo-banner {
-      padding: 10px 16px;
-      background: var(--dark);
-      color: #fef3c7;
-      text-align: center;
-      font-size: 0.9rem;
-      font-weight: 700;
     }
 
     header {
@@ -117,15 +109,15 @@
     }
 
     .hero {
-      min-height: 590px;
+      min-height: 610px;
       display: grid;
       place-items: center;
       position: relative;
       color: white;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(66, 32, 11, 0.88), rgba(66, 32, 11, 0.42)),
-        url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=85")
+        linear-gradient(90deg, rgba(66, 32, 11, 0.9), rgba(66, 32, 11, 0.45)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85")
         center/cover;
     }
 
@@ -145,14 +137,14 @@
     }
 
     h1 {
-      max-width: 760px;
+      max-width: 780px;
       margin-bottom: 18px;
       font-size: clamp(2.5rem, 6vw, 4.8rem);
       line-height: 1.05;
     }
 
     .hero p {
-      max-width: 630px;
+      max-width: 650px;
       margin-bottom: 27px;
       font-size: 1.12rem;
       color: #fff7ed;
@@ -176,7 +168,9 @@
       text-align: center;
     }
 
-    .product-grid {
+    .services-grid,
+    .pricing-grid,
+    .why-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
@@ -184,6 +178,7 @@
 
     .card {
       overflow: hidden;
+      padding: 25px;
       background: var(--white);
       border-radius: 20px;
       box-shadow: 0 9px 24px rgba(0, 0, 0, 0.09);
@@ -195,16 +190,15 @@
       box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
     }
 
-    .card img {
-      width: 100%;
-      height: 230px;
-      display: block;
-      object-fit: cover;
-      background: #fed7aa;
-    }
-
-    .card-content {
-      padding: 21px;
+    .card-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 16px;
+      background: #ffedd5;
+      font-size: 1.8rem;
     }
 
     .card h3 {
@@ -213,15 +207,8 @@
       font-size: 1.28rem;
     }
 
-    .tag-demo {
-      display: inline-block;
-      margin: 15px 0 18px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #ffedd5;
-      color: #9a3412;
-      font-size: 0.84rem;
-      font-weight: 800;
+    .card p {
+      color: var(--muted);
     }
 
     .why {
@@ -240,12 +227,6 @@
       color: #fed7aa;
     }
 
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
     .why-card {
       padding: 24px;
       border: 1px solid rgba(255, 255, 255, 0.28);
@@ -258,32 +239,119 @@
       margin-bottom: 8px;
     }
 
-    .portfolio-note {
-      max-width: 760px;
-      margin: 0 auto 28px;
-      padding: 17px 20px;
-      border-left: 5px solid var(--primary);
-      border-radius: 10px;
-      background: #ffedd5;
-      color: #7c2d12;
-      text-align: center;
-      font-weight: 700;
+    .pricing-section {
+      background: #fff;
     }
 
-    .testimonial {
-      max-width: 760px;
-      margin: 17px auto;
-      padding: 23px;
-      border-left: 6px solid var(--primary);
+    .pricing-card {
+      position: relative;
+      border: 2px solid transparent;
+    }
+
+    .pricing-card.recommended {
+      border-color: var(--primary);
+    }
+
+    .recommended-label {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 7px 14px;
+      border-radius: 0 18px 0 14px;
+      background: var(--primary);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .price {
+      margin: 16px 0;
+      color: var(--primary-dark);
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    .price span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: normal;
+    }
+
+    .features {
+      min-height: 155px;
+      margin-bottom: 20px;
+      list-style: none;
+    }
+
+    .features li {
+      margin-bottom: 8px;
+      color: var(--muted);
+    }
+
+    .features li::before {
+      content: "✓";
+      margin-right: 8px;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .process-item {
+      padding: 22px;
+      border-radius: 16px;
+      background: var(--white);
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    }
+
+    .process-number {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 13px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      font-weight: 900;
+    }
+
+    .process-item h3 {
+      margin-bottom: 6px;
+      color: var(--primary-dark);
+    }
+
+    .process-item p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .faq-item {
+      margin-bottom: 14px;
+      padding: 20px;
       border-radius: 14px;
       background: var(--white);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
     }
 
-    .testimonial strong {
-      display: inline-block;
-      margin-top: 10px;
+    .faq-item h3 {
+      margin-bottom: 7px;
       color: var(--primary-dark);
+      font-size: 1.08rem;
+    }
+
+    .faq-item p {
+      color: var(--muted);
     }
 
     .cta-section {
@@ -300,10 +368,10 @@
       box-shadow: 0 12px 27px rgba(0, 0, 0, 0.09);
     }
 
-    .small-note {
-      margin-top: 18px;
+    .cta-box p {
+      max-width: 620px;
+      margin: 0 auto 24px;
       color: var(--muted);
-      font-size: 0.9rem;
     }
 
     footer {
@@ -313,22 +381,33 @@
       text-align: center;
     }
 
+    footer p {
+      margin: 5px 0;
+    }
+
+    @media (max-width: 860px) {
+      .services-grid,
+      .pricing-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 760px) {
       nav a:not(.button) {
         display: none;
       }
 
       .hero {
-        min-height: 530px;
+        min-height: 550px;
       }
 
       .hero-content {
         padding: 72px 0;
-      }
-
-      .product-grid,
-      .why-grid {
-        grid-template-columns: 1fr;
       }
 
       .button-secondary {
@@ -339,134 +418,365 @@
         padding: 58px 0;
       }
     }
+
+    @media (max-width: 520px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navbar {
+        min-height: 64px;
+      }
+
+      h1 {
+        font-size: 2.7rem;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="demo-banner">
-    ⚠️ PROJECT DEMO PORTFOLIO — Produk, testimoni, dan brand pada halaman ini hanya contoh desain; bukan penawaran jual-beli nyata.
-  </div>
 
   <header>
     <div class="container navbar">
-      <a class="logo" href="#">Rasa<span>Kita</span></a>
+      <a class="logo" href="#">Daniel<span>Web</span></a>
 
       <nav>
-        <a href="#contoh-menu">Contoh Katalog</a>
-        <a href="#fitur">Fitur</a>
-        <a href="#kontak" class="button button-primary">Minta Website Serupa</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#paket">Paket</a>
+        <a href="#proses">Proses</a>
+        <a href="#kontak" class="button button-primary">Konsultasi Gratis</a>
       </nav>
     </div>
   </header>
 
   <main>
+
     <section class="hero">
       <div class="hero-content">
-        <div class="badge">✨ Demo Landing Page UMKM</div>
-        <h1>Website yang Membuat Bisnis Lokal Terlihat Lebih Profesional</h1>
+        <div class="badge">🚀 Jasa Pembuatan Website UMKM</div>
+
+        <h1>
+          Buat Bisnis Anda Tampil Profesional di Internet
+        </h1>
+
         <p>
-          Contoh desain landing page untuk UMKM makanan, toko, jasa, dan personal brand.
-          Dibuat responsif agar nyaman dibuka dari HP maupun desktop.
+          Kami membantu UMKM, toko online, jasa profesional, bisnis lokal,
+          dan personal brand memiliki website modern, responsif, dan menarik.
         </p>
 
-        <a class="button button-primary" href="#kontak">Minta Website Seperti Ini</a>
-        <a class="button button-secondary" href="#contoh-menu">Lihat Contoh Desain</a>
+        <a class="button button-primary" href="#kontak">
+          Konsultasi Gratis
+        </a>
+
+        <a class="button button-secondary" href="#paket">
+          Lihat Paket Website
+        </a>
       </div>
     </section>
 
-    <section id="contoh-menu">
+    <section id="layanan">
       <div class="container">
-        <h2 class="title">Contoh Tampilan Katalog</h2>
+        <h2 class="title">Layanan yang Kami Sediakan</h2>
+
         <p class="subtitle">
-          Foto dan kartu di bawah adalah contoh cara menampilkan produk/layanan pada website UMKM.
-          Semua informasi ini hanya untuk kebutuhan demo portfolio.
+          Pilih layanan website sesuai kebutuhan bisnis Anda. Semua website
+          dibuat dengan desain yang profesional dan mudah digunakan.
         </p>
 
-        <div class="product-grid">
+        <div class="services-grid">
+
           <article class="card">
-            <img
-              src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=80"
-              alt="Contoh produk makanan pertama">
-            <div class="card-content">
-              <h3>Produk Contoh Satu</h3>
-              <p>Contoh kartu katalog dengan foto, judul, deskripsi, dan tombol ajakan.</p>
-              <span class="tag-demo">Demo desain — bukan dijual</span><br>
-              <a class="button button-primary" href="#kontak">Minta Desain Serupa</a>
-            </div>
+            <div class="card-icon">🌐</div>
+            <h3>Landing Page</h3>
+            <p>
+              Website satu halaman untuk promosi bisnis, produk, jasa,
+              event, atau kampanye pemasaran.
+            </p>
           </article>
 
           <article class="card">
-            <img
-              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80"
-              alt="Contoh produk makanan kedua">
-            <div class="card-content">
-              <h3>Produk Contoh Dua</h3>
-              <p>Bagian ini dapat diubah menjadi menu makanan, jasa, toko, atau produk lainnya.</p>
-              <span class="tag-demo">Demo desain — bukan dijual</span><br>
-              <a class="button button-primary" href="#kontak">Minta Desain Serupa</a>
-            </div>
+            <div class="card-icon">🏢</div>
+            <h3>Company Profile</h3>
+            <p>
+              Website profesional untuk menampilkan profil perusahaan,
+              layanan, portofolio, tim, dan informasi kontak.
+            </p>
           </article>
 
           <article class="card">
-            <img
-              src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=900&q=80"
-              alt="Contoh produk makanan ketiga">
-            <div class="card-content">
-              <h3>Produk Contoh Tiga</h3>
-              <p>Warna, gambar, isi, dan tombol dapat disesuaikan dengan identitas brand klien.</p>
-              <span class="tag-demo">Demo desain — bukan dijual</span><br>
-              <a class="button button-primary" href="#kontak">Minta Desain Serupa</a>
-            </div>
+            <div class="card-icon">🛍️</div>
+            <h3>Katalog Produk</h3>
+            <p>
+              Tampilkan produk, menu, layanan, dan harga agar pelanggan
+              lebih mudah mendapatkan informasi.
+            </p>
           </article>
+
+          <article class="card">
+            <div class="card-icon">📱</div>
+            <h3>Menu Digital</h3>
+            <p>
+              Menu digital modern untuk restoran, kafe, kedai, katering,
+              dan bisnis kuliner lainnya.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📍</div>
+            <h3>Website Bisnis Lokal</h3>
+            <p>
+              Website untuk membantu bisnis lokal tampil di Google,
+              menampilkan lokasi, jam operasional, dan kontak.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🎨</div>
+            <h3>Desain Sesuai Brand</h3>
+            <p>
+              Warna, font, gambar, dan isi website disesuaikan dengan
+              identitas serta karakter bisnis Anda.
+            </p>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <section class="why" id="fitur">
+    <section class="why" id="keunggulan">
       <div class="container">
-        <h2 class="title">Fitur pada Landing Page</h2>
+        <h2 class="title">Kenapa Memilih Layanan Kami?</h2>
+
         <p class="subtitle">
-          Struktur ini bisa dipakai sebagai dasar website bisnis sederhana yang modern dan jelas.
+          Website bukan hanya sekadar tampilan, tetapi juga alat untuk
+          membangun kepercayaan dan mendapatkan pelanggan baru.
         </p>
 
         <div class="why-grid">
+
           <div class="why-card">
-            <h3>📱 Ramah Mobile</h3>
-            <p>Layout menyesuaikan layar HP, tablet, sampai desktop agar nyaman dibaca semua orang.</p>
+            <h3>📱 Responsif di Semua Perangkat</h3>
+            <p>
+              Website tetap terlihat rapi dan nyaman digunakan melalui
+              HP, tablet, maupun komputer.
+            </p>
           </div>
 
           <div class="why-card">
             <h3>⚡ Cepat dan Ringan</h3>
-            <p>Dibuat dengan HTML dan CSS sederhana sehingga tidak membutuhkan aplikasi atau server rumit.</p>
+            <p>
+              Struktur website dibuat sederhana agar cepat dibuka dan
+              mudah dikembangkan di kemudian hari.
+            </p>
           </div>
 
           <div class="why-card">
-            <h3>💬 Call-to-Action</h3>
-            <p>Tombol dapat diarahkan ke WhatsApp, Instagram, marketplace, Google Maps, atau formulir.</p>
+            <h3>💬 Terhubung ke WhatsApp</h3>
+            <p>
+              Calon pelanggan dapat langsung menghubungi bisnis Anda
+              melalui tombol WhatsApp.
+            </p>
           </div>
+
+          <div class="why-card">
+            <h3>🎯 Fokus pada Konversi</h3>
+            <p>
+              Setiap bagian website dirancang agar pengunjung terdorong
+              untuk menghubungi atau membeli.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <h3>🔍 Optimasi Dasar Google</h3>
+            <p>
+              Website disusun dengan struktur dasar yang ramah mesin
+              pencari dan mudah ditemukan.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <h3>🤝 Komunikasi Mudah</h3>
+            <p>
+              Anda dapat berdiskusi langsung mengenai desain, isi,
+              fitur, dan perubahan website.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section" id="paket">
+      <div class="container">
+        <h2 class="title">Paket Pembuatan Website</h2>
+
+        <p class="subtitle">
+          Pilih paket yang paling sesuai dengan kebutuhan dan tahap
+          perkembangan bisnis Anda.
+        </p>
+
+        <div class="pricing-grid">
+
+          <article class="card pricing-card">
+            <h3>Paket Starter</h3>
+
+            <div class="price">
+              Rp500.000 <span>/ mulai</span>
+            </div>
+
+            <ul class="features">
+              <li>Website 1 halaman</li>
+              <li>Desain responsif</li>
+              <li>Profil dan layanan bisnis</li>
+              <li>Tombol WhatsApp</li>
+              <li>1 kali revisi</li>
+            </ul>
+
+            <a class="button button-primary" href="#kontak">
+              Pilih Paket
+            </a>
+          </article>
+
+          <article class="card pricing-card recommended">
+            <div class="recommended-label">PALING POPULER</div>
+
+            <h3>Paket Professional</h3>
+
+            <div class="price">
+              Rp1.500.000 <span>/ mulai</span>
+            </div>
+
+            <ul class="features">
+              <li>Website hingga 5 halaman</li>
+              <li>Desain sesuai identitas brand</li>
+              <li>Katalog produk atau layanan</li>
+              <li>Google Maps dan media sosial</li>
+              <li>2 kali revisi</li>
+            </ul>
+
+            <a class="button button-primary" href="#kontak">
+              Pilih Paket
+            </a>
+          </article>
+
+          <article class="card pricing-card">
+            <h3>Paket Business</h3>
+
+            <div class="price">
+              Rp3.000.000 <span>/ mulai</span>
+            </div>
+
+            <ul class="features">
+              <li>Website bisnis lengkap</li>
+              <li>Katalog produk atau menu</li>
+              <li>Optimasi dasar SEO</li>
+              <li>Integrasi WhatsApp dan sosial media</li>
+              <li>Revisi sesuai kebutuhan</li>
+            </ul>
+
+            <a class="button button-primary" href="#kontak">
+              Konsultasikan
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="proses">
+      <div class="container">
+        <h2 class="title">Bagaimana Prosesnya?</h2>
+
+        <p class="subtitle">
+          Proses pengerjaan dibuat sederhana agar Anda dapat mengikuti
+          perkembangan website dengan mudah.
+        </p>
+
+        <div class="process-grid">
+
+          <div class="process-item">
+            <div class="process-number">1</div>
+            <h3>Konsultasi</h3>
+            <p>
+              Diskusikan jenis bisnis, kebutuhan, fitur, dan konsep desain.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">2</div>
+            <h3>Perencanaan</h3>
+            <p>
+              Menentukan struktur halaman, isi konten, warna, dan fitur.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">3</div>
+            <h3>Pengerjaan</h3>
+            <p>
+              Website dibuat sesuai konsep dan materi yang telah disepakati.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">4</div>
+            <h3>Publikasi</h3>
+            <p>
+              Website diselesaikan, diperiksa, dan siap digunakan oleh bisnis.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <h2 class="title">Contoh Area Testimoni</h2>
-        <p class="subtitle">
-          Pada website untuk bisnis sungguhan, area ini wajib diisi ulasan pelanggan yang benar-benar asli.
-        </p>
+        <h2 class="title">Pertanyaan yang Sering Ditanyakan</h2>
 
-        <div class="portfolio-note">
-          Catatan: Testimoni berikut hanya contoh tata letak untuk project demo, bukan ulasan pelanggan nyata.
-        </div>
+        <div class="faq-list">
 
-        <div class="testimonial">
-          “Contoh tampilan testimoni yang dapat dipakai untuk memperkuat kepercayaan pengunjung pada website bisnis.”
-          <strong>— Demo Testimoni 1</strong>
-        </div>
+          <div class="faq-item">
+            <h3>Apakah website bisa dibuka melalui HP?</h3>
+            <p>
+              Bisa. Website dibuat responsif sehingga dapat menyesuaikan
+              tampilan HP, tablet, dan komputer.
+            </p>
+          </div>
 
-        <div class="testimonial">
-          “Bagian testimoni bisa dipadukan dengan nama, foto pelanggan, rating, atau tangkapan layar ulasan asli.”
-          <strong>— Demo Testimoni 2</strong>
+          <div class="faq-item">
+            <h3>Apakah bisa menggunakan domain sendiri?</h3>
+            <p>
+              Bisa. Anda dapat menggunakan domain sendiri seperti
+              namabisnis.com atau domain lainnya.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Apakah isi website dapat diubah?</h3>
+            <p>
+              Bisa. Teks, gambar, warna, harga, layanan, dan informasi
+              kontak dapat disesuaikan dengan kebutuhan bisnis.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Berapa lama proses pembuatannya?</h3>
+            <p>
+              Waktu pengerjaan bergantung pada jumlah halaman, fitur,
+              dan kesiapan materi dari klien.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Apakah tersedia layanan revisi?</h3>
+            <p>
+              Setiap paket memiliki jumlah revisi yang berbeda. Detailnya
+              dapat dibicarakan saat konsultasi.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>
@@ -474,29 +784,33 @@
     <section class="cta-section" id="kontak">
       <div class="container">
         <div class="cta-box">
-          <h2 class="title">Butuh Website Seperti Ini?</h2>
-          <p>
-            Saya dapat membantu membuat landing page portfolio, katalog produk,
-            menu digital, atau website UMKM sederhana.
-          </p>
-          <br>
+          <h2 class="title">Siap Membuat Website untuk Bisnis Anda?</h2>
 
-          <a class="button button-primary"
-             href="https://wa.me/62881026739596?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20landing%20page."
-             target="_blank">
-            Konsultasi via WhatsApp
-            
+          <p>
+            Konsultasikan kebutuhan website Anda sekarang. Kami siap membantu
+            membuat landing page, katalog produk, menu digital, atau website
+            profesional untuk bisnis Anda.
           </p>
+
+          <a
+            class="button button-primary"
+            href="https://wa.me/62881026739596?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website.%20Saya%20ingin%20konsultasi%20mengenai%20kebutuhan%20website%20bisnis%20saya."
+            target="_blank"
+            rel="noopener">
+            Konsultasi via WhatsApp
+          </a>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
     <div class="container">
-      <p><strong>UMKM Landing Page Demo</strong> — Project portfolio oleh Daniel Sitompul.</p>
-      <p>© 2026. Dibuat dengan HTML, CSS, dan GitHub Pages.</p>
+      <p><strong>DanielWeb Studio</strong> — Jasa Pembuatan Website UMKM.</p>
+      <p>© 2026 DanielWeb Studio. Semua hak dilindungi.</p>
     </div>
   </footer>
+
 </body>
 </html>
